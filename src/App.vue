@@ -11,9 +11,10 @@
     <vuextest></vuextest>
     <firstcomponent></firstcomponent>
     <routertest></routertest>
+    <httptest></httptest>
   </div>
     <listtest></listtest>
-    <httptest></httptest>
+
   </div>
 </template>
 
