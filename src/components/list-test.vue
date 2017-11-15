@@ -27,7 +27,6 @@
           $(".new-lists-style li").eq(i).addClass('list-show');
       });
     }
-
   }
 
 </script>

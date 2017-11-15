@@ -12,6 +12,9 @@ const endLoading = (commit, startTime, toggle) => {
 }
 
 export default {
+  setMemberInfo ({commit}) {
+      return Vue.http.get('http://localhost:8082/IM/SetMemberInfo').catch((err) => { console.log(err) })
+  },
     login ({commit}, payload) {
         return Vue.http.post('/api/login', payload).catch((err) => { console.log(err) })
     },

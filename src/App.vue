@@ -13,6 +13,7 @@
     <routertest></routertest>
   </div>
     <listtest></listtest>
+    <httptest></httptest>
   </div>
 </template>
 
@@ -35,7 +36,8 @@
       firstcomponent:resolve => {require(['./components/first-component.vue'], resolve)},
       vuextest:resolve =>{require(['./components/vuex-test.vue'],resolve)},
       routertest:resolve =>{require(['./components/router-test.vue'],resolve)},
-      listtest:resolve =>{require(['./components/list-test.vue'],resolve)}
+      listtest:resolve =>{require(['./components/list-test.vue'],resolve)},
+      httptest:resolve =>{require(['./components/http-test.vue'],resolve)}
     }
   }
 </script>
