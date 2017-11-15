@@ -15,10 +15,6 @@
 <script>
   import {mapMutations, mapActions, mapGetters, mapState}     from 'vuex'
   export default {
-    data() {
-      return {
-      }
-    },
     computed: {
       ...mapState(['items'])
     },
@@ -31,6 +27,7 @@
           $(".new-lists-style li").eq(i).addClass('list-show');
       });
     }
+
   }
 
 </script>

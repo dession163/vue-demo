@@ -16,13 +16,7 @@ const state = {
     resolveFn: () => {},
     rejectFn: () => {}
   },
-  tags: [],
-  curTag: '',
-  article: {},
   articles: [],
-  draft: {},
-  drafts: {},
-  comments: [],
   items: [
     { title: "烧脑巨作 《胡莱三国2》TV版大屏开战!", url: "http://www.17sysj.com/news/17484.html",time:"11-13"},
     { title: "暗黑血统2 客服娘光棍节送福利 神秘礼盒竟是！", url: "http://www.17sysj.com/news/17483.html",time:"11-12"},

@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-// import HelloWorld from '@/components/HelloWorld'
-
 // 使用懒加载的组件
 const thirtcomponment = resolve => require(['@/components/thirt-component'], resolve)
 const secondcomponent = resolve => require(['@/components/second-component'], resolve)
