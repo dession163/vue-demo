@@ -65,4 +65,7 @@ export default {
   increment(state,){
     state.count += 2;
   },
+  set_memberInfo: (state, memberif) => {
+    state.memberInfo = memberif
+  }
 }

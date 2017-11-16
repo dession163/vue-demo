@@ -1,5 +1,11 @@
 <template>
   <!--显示天气界面-->
+  <div>
+  <div>
+    <p>请求返回:{{memberInfo}}</p>
+    <button v-on:click="setMemberInfo">跨域请求</button>
+  </div>
+  <div>
   <ul class='weather' v-if="weatherInfo">
     <li><h3 style='display:inline; color: #f66'>{{weatherInfo.currentCity}}</h3>  |  pm2.5-{{weatherInfo.pm25}}</li>
     <li>
@@ -25,33 +31,44 @@
     <span></span>
     <span></span>
   </p>
+  </div>
+  </div>
 </template>
 
 <script>
-  export default {
+//import { mapState,mapActions,mapMutations} from 'vuex'
+import httpClient from '../utils/HttpClient'
+import api from  '../utils/API'
+export default {
     data() {
       return {
-        url: 'http://api.map.baidu.com/telematics/v3/weather?location=上海&output=json&ak=HGOUnCXeQLEeywhGOu2jU29PFdC6duFF',
         weatherInfo: null,
-        timer: null
+        timer: null,
+        memberInfo: "NOthing"
       }
     },
     created() { //钩子函数，组件创建完成时调用getWeather方法获取天气信息
       this.getWeather();
     },
+//  computer:{
+//    ...mapState(['memberInfo'])
+//  },
     methods: {
-      getWeather() { //从百度api获取天气信息
-        this.$http.jsonp(this.url)
-          .then((response) => { //异步
-            if (response) {
-              console.log(response);
-              this.weatherInfo = response.data.results[0];
-            } else { //没有响应就再发起一次
-              console.error('agian');
-              this.getWeather();
-            }
-          });
+//      ...mapActions([
+//         'setMemberInfo'
+//      ]),
+      setMemberInfo(){
+        httpClient.httpJsonp("http://localhost:8082/IM/SetMemberInfo",api.baiduTelematics.param)
+          .then((response) => {
+          this.memberInfo = response.msg;});
       },
+
+      getWeather() {
+        httpClient.httpJsonp(api.baiduTelematics.url,api.baiduTelematics.param)
+          .then((response) => {
+          this.weatherInfo = response.results[0];});
+      },
+
       addClass(e) { //通过这个方法完成天气信息的显示和隐藏。
         if (e.currentTarget.nodeName == 'LI') {
           var li = e.currentTarget;

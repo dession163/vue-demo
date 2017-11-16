@@ -4,7 +4,6 @@ import VueResource from 'vue-resource'
 import router  from './router'
 //store为实例化生成的
 import store from './store'
-
 import $ from 'jquery'
 
 import './assets/bootstrap/js/bootstrap.min'

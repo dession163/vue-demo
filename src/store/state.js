@@ -27,6 +27,7 @@ const state = {
     { title: "玩得爽!《超神名将传》战斗技巧全攻略",url:"http://www.17sysj.com/news/17482.htm",time:"11-11"},
     { title: "赤炎vs毁灭者 《弹弹堂手游》英雄级武器解析",url:"http://www.17sysj.com/news/17481.htm",time:"11-10"},
     { title: "烧脑巨作 《胡莱三国2》TV版大屏开战!", url: "http://www.17sysj.com/news/17484.html",time:"11-13"},
-  ]
+  ],
+  memberInfo: ""
 }
 export default state;
