@@ -16,8 +16,14 @@ const serviceModule = {
       "count":"10"
     },
     method:'jsonp'
-  }
+  },
 
+  local_setMemberInfo:{
+    url:'IM/SetMemberInfo',//相当于请求同域下的：http://localhost:8080/IM/SetMemberInfo
+    param:{
+    },
+    method:'get'
+  },
 
 }
 const Api = {...serviceModule }

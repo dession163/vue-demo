@@ -4,8 +4,8 @@
     <a> written by {{ author }} </a>
     <p> <a href="https://github.com/">github</a></p>
     <ul>
-      <li v-for="article in articles">
-        {{article.title}}
+      <li v-for="subject in subjects">
+        {{subject.title}}
       </li>
     </ul>
   </div>
@@ -18,33 +18,21 @@ export default {
   data() {
     return {
       author: "dddddddd",
-      articles: []
+      subjects: []
     }
   },
 
 mounted: function() {
     httpClient.httpJsonp(api.douban.url,api.douban.param)
-      .then(function(response) {
+      .then((data)=> {
       // 这里是处理正确的回调
-        console.log("douban:",response.title)
-//        this.articles = response.subjects[0]
-        // this.articles = response.data["subjects"] 也可以
-    }, function(response) {
-        // 这里是处理错误的回调
-        console.log(response)
-    });
-
-//  this.$http.jsonp('https://api.douban.com/v2/movie/top250?count=10').then(function(response) {
-//    // 这里是处理正确的回调
-//    console.log("douban:",response)
-//    this.articles = response.data.subjects
-//    // this.articles = response.data["subjects"] 也可以
-//
-//  }, function(response) {
-//    // 这里是处理错误的回调
-//    console.log(response)
-//  });
-
+        console.log("douban:",data.subjects)
+        this.subjects = data.subjects  // this.articles = response.data["subjects"] 也可以
+    })
+      .catch((error)=>{
+      // 异常回调
+        console.log(error)
+    })
   }
 }
 </script>

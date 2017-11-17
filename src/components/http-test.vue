@@ -44,7 +44,7 @@ export default {
       return {
         weatherInfo: null,
         timer: null,
-        memberInfo: "NOthing"
+        memberInfo: "Nthing"
       }
     },
     created() { //钩子函数，组件创建完成时调用getWeather方法获取天气信息
@@ -58,9 +58,13 @@ export default {
 //         'setMemberInfo'
 //      ]),
       setMemberInfo(){
-        httpClient.httpJsonp("http://localhost:8082/IM/SetMemberInfo",api.baiduTelematics.param)
-          .then((response) => {
-          this.memberInfo = response.msg;});
+        httpClient.HttpGet(api.local_setMemberInfo.url,api.local_setMemberInfo.param)
+          .then((data) => {
+            console.log("setMemberInfo",data)
+            this.memberInfo = data.msg;})
+          .catch((data)=>{
+            console.log("请求失败")
+        });
       },
 
       getWeather() {
