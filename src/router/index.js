@@ -5,6 +5,10 @@ import Router from 'vue-router'
 const thirtcomponment = resolve => require(['@/components/thirt-component'], resolve)
 const secondcomponent = resolve => require(['@/components/second-component'], resolve)
 
+const markdown = resolve => require(['@/components/Markdown-test'],resolve)
+
+
+import home from '@/components/home.vue'
 Vue.use(Router)
 
 // 创建一个路由器实例
@@ -12,7 +16,18 @@ Vue.use(Router)
 const router = new Router({
   mode: 'history',
   base: __dirname,
+
   routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: home
+    },
+    {
+      path: '/markdown',
+      name: 'markdown',
+      component: markdown
+    },
     {
       path: '/home/first',
       name: 'user',
@@ -27,7 +42,14 @@ const router = new Router({
         firstrouterview: secondcomponent,
         secondrouterview:thirtcomponment,
       }
-    }
+    },
+
+
+    // {
+    //   path:'/markdown',
+    //   components:markdown,
+    //
+    // }
   ]
 })
 

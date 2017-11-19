@@ -13,6 +13,13 @@ import './assets/bootstrap/css/bootstrap.min.css'
 // import './assets/css/lists-style.css'
 import './assets/css/homeindex.css'
 
+
+//markdown编辑器需要的样式
+import './assets/css/fontello.css'
+import './assets/css/fontello-codes.css'
+import './assets/css/animation.css'
+
+
 //开启debug模式
 Vue.config.debug = true;
 
