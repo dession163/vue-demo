@@ -1,6 +1,7 @@
 <template>
   <!--显示天气界面-->
   <div>
+    <!--同服的跨域-->
   <div>
     <p>请求返回:{{memberInfo}}</p>
     <button v-on:click="setMemberInfo">跨域请求</button>

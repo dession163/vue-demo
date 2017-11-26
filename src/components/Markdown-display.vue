@@ -1,7 +1,10 @@
 <template>
 
-  <div class="article" v-html="text"></div>
-
+  <div id="home" class="navbar navbar-default navbar-static-top" data-ride="carousel">
+    <div id="main">
+      <div class="article" v-html="text"></div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -16,5 +19,28 @@
 </script>
 
 <style>
+  body {
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+    font-family: "微软雅黑","宋体",Arial;
+    background: #2d3640 ;
+    min-width: 1200px;
+  }
+
+  #home {
+    opacity: 0.95;
+    filter: alpha(opacity=95);
+    box-shadow: 0 0 10px #000;
+    margin: 80px auto;
+    width: 900px;
+    background: #fff;
+    overflow: auto;
+    border: solid 1px
+  }
+  #main {
+    padding: 20px;
+  }
+
 
 </style>

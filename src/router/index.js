@@ -9,6 +9,8 @@ const markdown = resolve => require(['@/components/Markdown-test'],resolve)
 
 const markdowndisplay = resolve => require(['@/components/Markdown-display'],resolve)
 
+const article = resolve => require(['@/components/Article'],resolve)
+
 import home from '@/components/home.vue'
 Vue.use(Router)
 
@@ -48,6 +50,11 @@ const router = new Router({
         firstrouterview: secondcomponent,
         secondrouterview:thirtcomponment,
       }
+    },
+    {
+      path: '/Article',
+      name: 'article',
+      component: article
     },
 
 
