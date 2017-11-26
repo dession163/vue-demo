@@ -7,6 +7,7 @@ const secondcomponent = resolve => require(['@/components/second-component'], re
 
 const markdown = resolve => require(['@/components/Markdown-test'],resolve)
 
+const markdowndisplay = resolve => require(['@/components/Markdown-display'],resolve)
 
 import home from '@/components/home.vue'
 Vue.use(Router)
@@ -27,6 +28,11 @@ const router = new Router({
       path: '/markdown',
       name: 'markdown',
       component: markdown
+    },
+    {
+      path: '/markdown-display',
+      name: 'markdowndisplay',
+      component: markdowndisplay
     },
     {
       path: '/home/first',
