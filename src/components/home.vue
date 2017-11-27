@@ -12,6 +12,8 @@
       <firstcomponent></firstcomponent>
       <routertest></routertest>
     </div>
+    <!--<listtest></listtest>-->
+    <!--<markdowntest></markdowntest>-->
   </div>
 </template>
 
