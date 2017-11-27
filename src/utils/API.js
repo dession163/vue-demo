@@ -1,4 +1,10 @@
-
+/**
+ * API 列表
+ * @type {
+ * url:     请求链接
+ * param:   参数列表
+ * method:  请求方式：get、post、jsonp
+ */
 const serviceModule = {
   baiduTelematics:{
     url:'http://api.map.baidu.com/telematics/v3/weather',
@@ -24,7 +30,6 @@ const serviceModule = {
     },
     method:'get'
   },
-
 }
 const Api = {...serviceModule }
 export default Api

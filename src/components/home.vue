@@ -11,10 +11,7 @@
       <vuextest></vuextest>
       <firstcomponent></firstcomponent>
       <routertest></routertest>
-      <httptest></httptest>
     </div>
-    <!--<listtest></listtest>-->
-    <markdowntest></markdowntest>
   </div>
 </template>
 
@@ -30,6 +27,17 @@
         message1: '页面加载于 ' + new Date().toLocaleString(),
         seen: false,
         message2:'',
+        videoOptions: {
+          source: {
+            type: "application/x-mpegURL",
+            src: 'http://www.17sysj.com/video/76f7b7ac5940La',
+            withCredentials: false
+          },
+          language: 'zh-CN',
+          live: true,
+          autoplay: true,
+          height: 540
+        }
       }
     },
     // 组件
@@ -37,9 +45,6 @@
       firstcomponent:resolve => {require(['../components/first-component.vue'], resolve)},
       vuextest:resolve =>{require(['../components/vuex-test.vue'],resolve)},
       routertest:resolve =>{require(['../components/router-test.vue'],resolve)},
-      listtest:resolve =>{require(['../components/list-test.vue'],resolve)},
-      httptest:resolve =>{require(['../components/http-test.vue'],resolve)},
-      markdowntest:resolve=>{require(['../components/Markdown-test.vue'],resolve)},
     }
   }
 </script>
