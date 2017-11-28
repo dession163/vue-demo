@@ -12,6 +12,7 @@ const markdown = resolve => require(['@/components/Markdown-test'],resolve)
 const markdowndisplay = resolve => require(['@/components/Markdown-display'],resolve)
 
 const article = resolve => require(['@/components/Article'],resolve)
+const contents = resolve => require(['@/components/contents'],resolve)
 
 import home from '@/components/home.vue'
 Vue.use(Router)
@@ -31,6 +32,11 @@ const router = new Router({
       path: '/markdown',
       name: 'markdown',
       component: markdown
+    },
+    {
+      path: '/contents',
+      name: 'contents',
+      component: contents
     },
     {
       path: '/markdown-display',
@@ -57,14 +63,6 @@ const router = new Router({
       name: 'article',
       component: article
     },
-
-
-    // {
-    //   path:'/markdown',
-    //   components:markdown,
-    //
-    // }
->>>>>>> e7625ec53210768bbb50d8e105838dc8b5cbce73
   ]
 })
 export default router
